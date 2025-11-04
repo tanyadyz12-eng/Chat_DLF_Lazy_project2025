@@ -1,195 +1,152 @@
-[README.md](https://github.com/user-attachments/files/23345531/README.md)
+Lazor Project — EN.540.635 (Fall 2025)
+This repository implements a reproducible Lazor solver using only the Python standard library. It provides a CLI entry point, batch runners, and consistent outputs (JSON/TXT/PNG) for grading and verification.
+Repository layout
+.
+├── boards/                 # Test maps (.bff)
+├── results/                # Outputs (auto-created)
+├── README.md
+├── bff_parser.py
+├── main_plus.py            # Primary CLI entry
+├── main_unified.py         # Alternate entry (legacy-compatible)
+├── model.py
+├── render.py
+├── render_plus.py
+├── run_all_unified.py      # Batch runner (recommended)
+├── run_all_wall.py         # Batch runner for wall collision
+├── simulate.py             # Center-collision model (not used for submission)
+├── simulate_wall.py        # Wall-collision model (used)
+├── solver_v2.py            # Heuristic backtracking solver (used)
+├── solver_parallel.py      # Multi-process wrapper (optional)
+└── test_basic.py           # Simple sanity checks
 
-# Lazor Project — README (English Only)
+Dependencies: Python ≥ 3.10, no third-party packages required.
 
-A concise, TA-ready submission for the Lazor course project. This repository provides **single-board runs**, **batch evaluation**, and **artifact export** (TXT/JSON/PNG). It supports two collision models and two solver modes.
+Quick start (single map)
+Example (wall collision, v2 solver):
+python3 main_plus.py boards/dark_1.bff --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
 
----
+Key arguments:
 
-## 1) What’s Included
 
-**Entrypoints**
-- `lazor_solver/main_plus.py` — full-featured CLI with `--collision`, `--solver`, `--png`, etc.
-- `lazor_solver/main_unified.py` — simplified entry for the default course configuration (fixed `v2`).
+--collision {wall|center}: collision model (submission uses wall)
 
-**Batch runners**
-- `lazor_solver/run_all_wall.py` — batch run over a folder of `.bff` with **wall + v2**, writes `summary_wall.csv`.
-- `lazor_solver/run_all_unified.py` — runs the four combos **(wall|center) × (v2|parallel)**, writes `summary_unified.csv`.
 
-**Simulation backends**
-- `lazor_solver/simulate_wall.py` — wall-collision tracer (default for submission).
-- `lazor_solver/simulate.py` — center-collision tracer (for comparison/robustness).
+--solver {v2|parallel}: solver choice (v2 recommended; parallel optional)
 
-**Solvers**
-- `lazor_solver/solver_v2.py` — main backtracking + heuristics solver (supports time limits and seed).
-- `lazor_solver/solver_parallel.py` — parallel wrapper (multi-process / multi-seed exploration).
 
-**I/O & Rendering**
-- `lazor_solver/render_plus.py` — unified writer for TXT/JSON/PNG artifacts.
-- `lazor_solver/render.py` — enhanced PNG renderer; auto-infers hits when not explicitly provided.
+--time_limit <seconds>: per-map time budget (default 120)
 
-**Core types & parsing**
-- `lazor_solver/model.py` — data structures (Board, Block, BlockType, etc.).
-- `lazor_solver/bff_parser.py` — parses `.bff` into a `Board` instance.
 
-**Smoke tests**
-- `lazor_solver/test_basic.py` — minimal tests for parser, block creation, and tracing.
+--png {0|1}: save a PNG visualization
 
-> Coordinates: lattice intersections are integers; block centers live at odd coordinates (half‑step model) to match the class BFF spec.
 
----
+--seed <int>: RNG seed for reproducibility
 
-## 2) Environment
 
-- Python ≥ 3.8 (3.9+ recommended)
-- No third-party dependencies are strictly required for solving. PNG export requires a working `matplotlib` installation available on the grader machine (already used in many course setups).
-
-Suggested layout:
-
-```
-<repo_root>/
-  boards/               # the instructor's .bff tests
-  results/              # output dir (created automatically if missing)
-  lazor_solver/
-    main_plus.py
-    main_unified.py
-    run_all_wall.py
-    run_all_unified.py
-    bff_parser.py
-    model.py
-    simulate_wall.py
-    simulate.py
-    solver_v2.py
-    solver_parallel.py
-    render_plus.py
-    render.py
-```
-
----
-
-## 3) Quick Start (single board)
-
-Run **wall + v2** (recommended for course grading). Exports `.txt/.json` and optional `.png` to `results/`:
-
-```bash
-python3 lazor_solver/main_plus.py boards/dark_1.bff \
-  --collision wall --solver v2 --time_limit 120 --png 1 \
-  --seed 42 --out results --results_dir results
-```
-
-Common flags:
-- `--collision {wall|center}` — collision model.
-- `--solver {v2|parallel}` — single-threaded `v2` or parallel search.
-- `--time_limit` — seconds per board.
-- `--png {0|1}` — export PNG visualization.
-- `--seed` — random seed for reproducibility.
-- `--workers` — process count for `--solver parallel`.
-
-**Simplified entry (fixed v2):**
-```bash
-python3 lazor_solver/main_unified.py boards/dark_1.bff \
-  --collision wall --time_limit 120 --png 1 --seed 42 --out results
-```
-
----
-
-## 4) Batch Evaluation
-
-**A. Default course setting (wall + v2):**
-```bash
-python3 lazor_solver/run_all_wall.py \
-  --boards_dir boards --results_dir results --time_limit 120 --png 1 --seed 42
-```
-Artifacts: `results/summary_wall.csv` plus per-board TXT/JSON(/PNG).
-
-**B. Full comparison (wall/center × v2/parallel):**
-```bash
-python3 lazor_solver/run_all_unified.py \
-  --boards_dir boards --results_dir results --time_limit 120 --png 1 --seed 42 --workers 4
-```
-Artifacts: `results/summary_unified.csv` plus per-board outputs for each combo.
-
----
-
-## 5) Output Artifacts
-
-For each `NAME.bff` and each (collision, solver) pair, you will find:
-- `NAME_{collision}_{solver}.txt` — human-readable summary (solved flag, elapsed, seed, etc.).
-- `NAME_{collision}_{solver}.json` — machine-readable summary for autograding.
-- `NAME_{collision}_{solver}.png` — optional visualization (targets, hits, blocks, path).
-
----
-
-## 6) Reproducibility & Parallelism
-
-- Set `--seed` for deterministic exploration within a given heuristic schedule.
-- `solver_parallel.py` distributes multiple seeds across processes to broaden the search and reduce the chance of local optima.
-- Respect `--time_limit` to stay within grading constraints.
-
----
-
-## 7) Minimal Tests
-
-Run basic smoke tests (requires `boards/dark_1.bff` present):
-
-```bash
-python3 lazor_solver/test_basic.py
-```
-
-This checks:
-1) `.bff` parsing returns a valid board,  
-2) Block construction,  
-3) `simulate_wall.trace` returns `(hits, trajectory)` with correct types.
-
----
-
-## 8) Troubleshooting
-
-- **Only FAIL results**: confirm `boards/` path and file names; try a few different `--seed` values or use `--solver parallel --workers 4`.
-- **No PNG created**: ensure `--png 1` and `matplotlib` is available; `render_plus.py` calls into `render.py` for visualization.
-- **Different collision behavior**: use `--collision wall` for the default submission unless your instructor requests otherwise.
-- **Timeouts**: lower PNG usage for speed, or use `parallel` mode; verify per-board elapsed time is ≤ 120 s.
-
----
-
-## 9) Grading Checklist
-
-- [ ] All required boards solved under `--time_limit 120` using **wall + v2**.  
-- [ ] `results/` contains `.txt` + `.json` (PNG optional but recommended).  
-- [ ] CLI works out-of-the-box from TA’s machine (paths resolvable; no hard-coded OS specifics).  
-- [ ] Public, well-commented code and function docstrings where appropriate.  
-- [ ] README includes exact commands to reproduce results.
-
----
-
-## 10) Notes for Reviewers (Design Highlights)
-
-- `render.py` enhances PNG clarity (legend, inferred hits, turn labels) and tolerates callers that omit `hits`.  
-- `solver_v2.py` favors progress-aware heuristics and maintains the best partial solution within the time budget.  
-- `test_basic.py` offers a quick sanity check to prevent trivial environment or import errors before batch runs.
+--out, --results_dir: output folders (default results)
 
 
 
----
+Recommended demo maps (reproducible commands)
+# 1) dark_1
+python3 main_plus.py boards/dark_1.bff --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
 
-## Submission Quick Start (for TAs)
+# 2) mad_1
+python3 main_plus.py boards/mad_1.bff  --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
 
-```bash
-# Single board (wall+v2)
-python3 lazor_solver/main_plus.py boards/dark_1.bff \
-  --collision wall --solver v2 --time_limit 120 --png 1 \
-  --seed 42 --out results --results_dir results
+# 3) mad_7
+python3 main_plus.py boards/mad_7.bff  --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
 
-# Batch (7 boards, wall+v2)
-python3 lazor_solver/run_all_wall.py \
-  --boards_dir boards --results_dir results --time_limit 120 --png 1 --seed 42
-```
+# 4) choose the one that exists in your boards/: showstopper_4 or tiny_5
+python3 main_plus.py boards/showstopper_4.bff --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
+# or
+python3 main_plus.py boards/tiny_5.bff       --collision wall --solver v2 --time_limit 120 --png 1 --seed 42 --out results --results_dir results
 
-Artifacts expected: `results/*.txt`, `results/*.json`, and `results/summary_wall.csv` (PNG optional).  
-Time budget: **≤120 seconds per board**.
+All outputs are written under results/ within the time limit.
+
+Batch runs
+Run all .bff files in boards/:
+python3 run_all_unified.py --boards_dir boards --results_dir results --time_limit 120 --png 1 --workers 4
+
+Wall-only batch (optional):
+python3 run_all_wall.py --boards_dir boards --results_dir results --time_limit 120 --png 1
 
 
-## Authors
-- Yizhe Ding
-- Zhihan Liu
-- Qian Fu
+Output format (results/)
+For each map, three files are produced using the pattern <board>_<collision>_<solver>.*:
+
+
+.json — machine-readable summary
+
+
+.txt  — human-readable placement summary
+
+
+.png  — visualization (if --png 1)
+
+
+Example JSON:
+{
+  "board": "dark_1_wall_v2",
+  "solved": true,
+  "elapsed": 0.123,
+  "seed": 42,
+  "collision": "wall",
+  "solver": "v2",
+  "hits": 2,
+  "targets": 2,
+  "placements": { "(r,c)": "A" }
+}
+
+Quick pass/fail grep:
+grep -H '"solved":' results/*_wall_v2.json
+
+
+Implementation notes
+
+
+Parsing: bff_parser.py converts .bff into Board/Block structures (coordinate system aligned with course spec).
+
+
+Simulation: simulate_wall.py traces rays on the grid with reflection/absorption/refraction rules.
+
+
+Solvers: solver_v2.py uses backtracking with slot/block ordering heuristics, time limit, and a reproducible seed.
+solver_parallel.py offers a multi-process exploration wrapper.
+
+
+Rendering: render_plus.py writes JSON/TXT/PNG artifacts for grading and visualization.
+
+
+
+Environment
+
+
+Python ≥ 3.10
+
+
+OS: Windows / macOS / Linux
+
+
+No external libraries required
+
+
+
+FAQ
+
+
+File not found: cd to the repo root before running, or use absolute paths.
+
+
+No PNG generated: pass --png 1 and ensure results/ exists (it is auto-created).
+
+
+Time budget: adjust --time_limit; start with the recommended demo maps first.
+
+
+Reproducibility: commands specify --seed; change it to explore alternative solutions if desired.
+
+
+
+License / Academic use
+For EN.540.635 coursework use. Please acknowledge this repository if you reuse code or ideas.
