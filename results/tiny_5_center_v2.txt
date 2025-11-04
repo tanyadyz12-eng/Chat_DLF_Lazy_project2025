@@ -1,0 +1,11 @@
+Solved: False
+Targets hit: 1 / 2
+Seed: 42
+Collision: center
+Solver: v2
+Time: 0.078 s
+
+Board (lowercase = placed block):
+o B o
+o o o
+o o o

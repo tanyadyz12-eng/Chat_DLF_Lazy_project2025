@@ -1,0 +1,10 @@
+{
+  "board": "mad_1_center_v2",
+  "solved": false,
+  "targets_total": 4,
+  "targets_hit": 3,
+  "elapsed": 0.8148238658905029,
+  "seed": 42,
+  "collision": "center",
+  "solver": "v2"
+}

@@ -1,0 +1,10 @@
+{
+  "board": "mad_1_center_parallel",
+  "solved": false,
+  "targets_total": 4,
+  "targets_hit": 3,
+  "elapsed": 120.00375032424927,
+  "seed": 42,
+  "collision": "center",
+  "solver": "parallel"
+}

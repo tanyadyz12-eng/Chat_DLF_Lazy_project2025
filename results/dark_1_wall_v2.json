@@ -1,0 +1,10 @@
+{
+  "board": "dark_1_wall_v2",
+  "solved": true,
+  "targets_total": 2,
+  "targets_hit": 2,
+  "elapsed": 0.00013637542724609375,
+  "seed": 42,
+  "collision": "wall",
+  "solver": "v2"
+}

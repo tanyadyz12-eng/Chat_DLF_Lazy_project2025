@@ -1,0 +1,10 @@
+{
+  "board": "yarn_5_center_v2",
+  "solved": false,
+  "targets_total": 2,
+  "targets_hit": 0,
+  "elapsed": 73.52354788780212,
+  "seed": 42,
+  "collision": "center",
+  "solver": "v2"
+}

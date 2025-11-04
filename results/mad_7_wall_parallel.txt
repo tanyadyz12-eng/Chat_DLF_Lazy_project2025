@@ -1,0 +1,13 @@
+Solved: True
+Targets hit: 5 / 5
+Seed: 42
+Collision: wall
+Solver: parallel
+Time: 120.002 s
+
+Board (lowercase = placed block):
+o o o o o
+o o o o o
+o o o o x
+o o o o o
+o o o o o

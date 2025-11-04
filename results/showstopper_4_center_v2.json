@@ -1,0 +1,10 @@
+{
+  "board": "showstopper_4_center_v2",
+  "solved": true,
+  "targets_total": 1,
+  "targets_hit": 1,
+  "elapsed": 8.392333984375e-05,
+  "seed": 42,
+  "collision": "center",
+  "solver": "v2"
+}

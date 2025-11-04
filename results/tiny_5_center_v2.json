@@ -1,0 +1,10 @@
+{
+  "board": "tiny_5_center_v2",
+  "solved": false,
+  "targets_total": 2,
+  "targets_hit": 1,
+  "elapsed": 0.07778596878051758,
+  "seed": 42,
+  "collision": "center",
+  "solver": "v2"
+}

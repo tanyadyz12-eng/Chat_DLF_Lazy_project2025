@@ -1,0 +1,10 @@
+{
+  "board": "showstopper_4_wall_v2",
+  "solved": true,
+  "targets_total": 1,
+  "targets_hit": 1,
+  "elapsed": 8.487701416015625e-05,
+  "seed": 42,
+  "collision": "wall",
+  "solver": "v2"
+}
