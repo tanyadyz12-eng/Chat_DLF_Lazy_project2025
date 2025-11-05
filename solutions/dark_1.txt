@@ -1,0 +1,47 @@
+============================================================
+LAZOR BOARD SOLUTION: dark_1
+============================================================
+
+Board Configuration:
+----------------------------------------
+   x   .   .  
+   .   B   .  
+   B   B   x  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 0, 'B': 3, 'C': 0}
+  Blocks placed: 3
+
+  [B] Block at grid (0, 2) ¡ú laser coords (1, 5)
+  [B] Block at grid (1, 1) ¡ú laser coords (3, 3)
+  [B] Block at grid (1, 2) ¡ú laser coords (3, 5)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (3, 0), Direction (-1, 1)
+  Laser 2: Start (1, 6), Direction (1, -1)
+  Laser 3: Start (3, 6), Direction (-1, -1)
+  Laser 4: Start (4, 3), Direction (1, -1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (0, 3)
+  [+] HIT  Target at (6, 1)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 0.0000 seconds
+  Targets Hit: 2/2
+============================================================

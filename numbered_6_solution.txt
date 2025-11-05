@@ -1,0 +1,25 @@
+LAZOR BOARD SOLUTION
+==================================================
+
+Board Configuration:
+ B   o   o  
+ A   x   x  
+ o   o   A  
+ A   x   o  
+ B   o   o  
+
+==================================================
+Block Placement:
+  Block B at grid position (0, 0)
+  Block A at grid position (0, 1)
+  Block A at grid position (0, 3)
+  Block B at grid position (0, 4)
+  Block A at grid position (2, 2)
+
+==================================================
+Target Points Hit:
+  [+] Point (2, 5)
+  [+] Point (5, 0)
+
+==================================================
+Solution Status: SOLVED

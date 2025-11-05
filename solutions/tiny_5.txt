@@ -1,0 +1,45 @@
+============================================================
+LAZOR BOARD SOLUTION: tiny_5
+============================================================
+
+Board Configuration:
+----------------------------------------
+   A  [B]  A  
+   .   .   .  
+   A   C   .  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 3, 'B': 0, 'C': 1}
+  Blocks placed: 4
+
+  [A] Block at grid (0, 0) ¡ú laser coords (1, 1)
+  [A] Block at grid (0, 2) ¡ú laser coords (1, 5)
+  [C] Block at grid (1, 2) ¡ú laser coords (3, 5)
+  [A] Block at grid (2, 0) ¡ú laser coords (5, 1)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (4, 5), Direction (-1, -1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (1, 2)
+  [+] HIT  Target at (6, 3)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 0.0020 seconds
+  Targets Hit: 2/2
+============================================================

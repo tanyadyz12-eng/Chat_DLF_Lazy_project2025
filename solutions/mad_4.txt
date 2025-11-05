@@ -1,0 +1,49 @@
+============================================================
+LAZOR BOARD SOLUTION: mad_4
+============================================================
+
+Board Configuration:
+----------------------------------------
+   .   .   .   .  
+   .   A   .   .  
+   A   .   .   .  
+   .   A   .   A  
+   .   .   A   .  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 5, 'B': 0, 'C': 0}
+  Blocks placed: 5
+
+  [A] Block at grid (0, 2) ¡ú laser coords (1, 5)
+  [A] Block at grid (1, 1) ¡ú laser coords (3, 3)
+  [A] Block at grid (1, 3) ¡ú laser coords (3, 7)
+  [A] Block at grid (2, 4) ¡ú laser coords (5, 9)
+  [A] Block at grid (3, 3) ¡ú laser coords (7, 7)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (7, 2), Direction (-1, 1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (3, 4)
+  [+] HIT  Target at (5, 8)
+  [+] HIT  Target at (7, 4)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 0.3601 seconds
+  Targets Hit: 3/3
+============================================================

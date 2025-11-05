@@ -1,0 +1,176 @@
+{
+  "puzzle_name": "tiny_5",
+  "board": {
+    "width": 3,
+    "height": 3,
+    "grid": [
+      [
+        "o",
+        "B",
+        "o"
+      ],
+      [
+        "o",
+        "o",
+        "o"
+      ],
+      [
+        "o",
+        "o",
+        "o"
+      ]
+    ]
+  },
+  "available_blocks": {
+    "A": 3,
+    "B": 0,
+    "C": 1
+  },
+  "lasers": [
+    {
+      "start": [
+        4,
+        5
+      ],
+      "direction": [
+        -1,
+        -1
+      ]
+    }
+  ],
+  "target_points": [
+    [
+      1,
+      2
+    ],
+    [
+      6,
+      3
+    ]
+  ],
+  "solution": {
+    "blocks_placed": {
+      "1,1": "A",
+      "5,1": "A",
+      "1,5": "A",
+      "3,5": "C"
+    },
+    "num_blocks": 4,
+    "grid_positions": [
+      {
+        "block_type": "A",
+        "laser_coords": [
+          1,
+          1
+        ],
+        "grid_coords": [
+          0,
+          0
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          5,
+          1
+        ],
+        "grid_coords": [
+          2,
+          0
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          1,
+          5
+        ],
+        "grid_coords": [
+          0,
+          2
+        ]
+      },
+      {
+        "block_type": "C",
+        "laser_coords": [
+          3,
+          5
+        ],
+        "grid_coords": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "targets_hit": [
+      [
+        1,
+        2
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    "all_hit_points": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "is_solved": true
+  },
+  "performance": {
+    "solve_time_seconds": 0.002
+  }
+}

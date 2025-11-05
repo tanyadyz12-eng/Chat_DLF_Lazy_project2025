@@ -1,0 +1,307 @@
+{
+  "puzzle_name": "yarn_5",
+  "board": {
+    "width": 5,
+    "height": 6,
+    "grid": [
+      [
+        "o",
+        "B",
+        "x",
+        "o",
+        "o"
+      ],
+      [
+        "o",
+        "o",
+        "o",
+        "o",
+        "o"
+      ],
+      [
+        "o",
+        "x",
+        "o",
+        "o",
+        "o"
+      ],
+      [
+        "o",
+        "x",
+        "o",
+        "o",
+        "x"
+      ],
+      [
+        "o",
+        "o",
+        "x",
+        "x",
+        "o"
+      ],
+      [
+        "B",
+        "o",
+        "x",
+        "o",
+        "o"
+      ]
+    ]
+  },
+  "available_blocks": {
+    "A": 8,
+    "B": 0,
+    "C": 0
+  },
+  "lasers": [
+    {
+      "start": [
+        4,
+        1
+      ],
+      "direction": [
+        1,
+        1
+      ]
+    }
+  ],
+  "target_points": [
+    [
+      6,
+      9
+    ],
+    [
+      9,
+      2
+    ]
+  ],
+  "solution": {
+    "blocks_placed": {
+      "3,3": "A",
+      "1,5": "A",
+      "9,5": "A",
+      "5,7": "A",
+      "1,9": "A",
+      "9,9": "A",
+      "3,11": "A",
+      "7,11": "A"
+    },
+    "num_blocks": 8,
+    "grid_positions": [
+      {
+        "block_type": "A",
+        "laser_coords": [
+          3,
+          3
+        ],
+        "grid_coords": [
+          1,
+          1
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          1,
+          5
+        ],
+        "grid_coords": [
+          0,
+          2
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          9,
+          5
+        ],
+        "grid_coords": [
+          4,
+          2
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          5,
+          7
+        ],
+        "grid_coords": [
+          2,
+          3
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          1,
+          9
+        ],
+        "grid_coords": [
+          0,
+          4
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          9,
+          9
+        ],
+        "grid_coords": [
+          4,
+          4
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          3,
+          11
+        ],
+        "grid_coords": [
+          1,
+          5
+        ]
+      },
+      {
+        "block_type": "A",
+        "laser_coords": [
+          7,
+          11
+        ],
+        "grid_coords": [
+          3,
+          5
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "targets_hit": [
+      [
+        6,
+        9
+      ],
+      [
+        9,
+        2
+      ]
+    ],
+    "all_hit_points": [
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        11,
+        0
+      ]
+    ],
+    "is_solved": true
+  },
+  "performance": {
+    "solve_time_seconds": 7.7183
+  }
+}

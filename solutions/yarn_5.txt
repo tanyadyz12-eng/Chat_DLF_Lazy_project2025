@@ -1,0 +1,52 @@
+============================================================
+LAZOR BOARD SOLUTION: yarn_5
+============================================================
+
+Board Configuration:
+----------------------------------------
+   .  [B]  x   .   .  
+   .   A   .   .   .  
+   A   x   .   .   A  
+   .   x   A   .   x  
+   A   .   x   x   A  
+  [B]  A   x   A   .  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 8, 'B': 0, 'C': 0}
+  Blocks placed: 8
+
+  [A] Block at grid (0, 2) ¡ú laser coords (1, 5)
+  [A] Block at grid (0, 4) ¡ú laser coords (1, 9)
+  [A] Block at grid (1, 1) ¡ú laser coords (3, 3)
+  [A] Block at grid (1, 5) ¡ú laser coords (3, 11)
+  [A] Block at grid (2, 3) ¡ú laser coords (5, 7)
+  [A] Block at grid (3, 5) ¡ú laser coords (7, 11)
+  [A] Block at grid (4, 2) ¡ú laser coords (9, 5)
+  [A] Block at grid (4, 4) ¡ú laser coords (9, 9)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (4, 1), Direction (1, 1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (6, 9)
+  [+] HIT  Target at (9, 2)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 7.7183 seconds
+  Targets Hit: 2/2
+============================================================

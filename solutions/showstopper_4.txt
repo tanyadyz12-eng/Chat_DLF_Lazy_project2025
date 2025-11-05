@@ -1,0 +1,45 @@
+============================================================
+LAZOR BOARD SOLUTION: showstopper_4
+============================================================
+
+Board Configuration:
+----------------------------------------
+  [B]  A   B  
+   .   .   A  
+   A   .   B  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 3, 'B': 3, 'C': 0}
+  Blocks placed: 5
+
+  [A] Block at grid (0, 2) ¡ú laser coords (1, 5)
+  [A] Block at grid (1, 0) ¡ú laser coords (3, 1)
+  [B] Block at grid (2, 0) ¡ú laser coords (5, 1)
+  [A] Block at grid (2, 1) ¡ú laser coords (5, 3)
+  [B] Block at grid (2, 2) ¡ú laser coords (5, 5)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (3, 6), Direction (-1, -1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (2, 3)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 0.0210 seconds
+  Targets Hit: 1/1
+============================================================

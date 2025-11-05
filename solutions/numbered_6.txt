@@ -1,0 +1,49 @@
+============================================================
+LAZOR BOARD SOLUTION: numbered_6
+============================================================
+
+Board Configuration:
+----------------------------------------
+   B   .   .  
+   A   x   x  
+   .   .   A  
+   A   x   .  
+   B   .   .  
+
+Legend:
+  [X] = Fixed block
+   X  = Placed block
+   .  = Empty position
+   x  = No block allowed
+
+============================================================
+Block Placement Details:
+----------------------------------------
+  Blocks available: {'A': 3, 'B': 3, 'C': 0}
+  Blocks placed: 5
+
+  [B] Block at grid (0, 0) ¡ú laser coords (1, 1)
+  [A] Block at grid (0, 1) ¡ú laser coords (1, 3)
+  [A] Block at grid (0, 3) ¡ú laser coords (1, 7)
+  [B] Block at grid (0, 4) ¡ú laser coords (1, 9)
+  [A] Block at grid (2, 2) ¡ú laser coords (5, 5)
+
+============================================================
+Laser Configuration:
+----------------------------------------
+  Laser 1: Start (4, 9), Direction (-1, -1)
+  Laser 2: Start (6, 9), Direction (-1, -1)
+
+============================================================
+Target Verification:
+----------------------------------------
+  [+] HIT  Target at (2, 5)
+  [+] HIT  Target at (5, 0)
+
+============================================================
+Summary:
+----------------------------------------
+  Solution Status: SOLVED
+  Solve Time: 0.5138 seconds
+  Targets Hit: 2/2
+============================================================
